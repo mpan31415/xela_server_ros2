@@ -31,12 +31,12 @@ def generate_launch_description():
         # Run the finger sensor server
         ExecuteProcess(
             cmd=['sudo', '-n', 'xela_server', '-f', fingers_config_file, '--port', fingers_port],
-            output='screen'
+            # output='screen'
         ),
         # Run the palm sensor server
         ExecuteProcess(
             cmd=['sudo', '-n', 'xela_server', '-f', palm_config_file, '--port', palm_port],
-            output='screen'
+            # output='screen'
         ),
         
         # Launch the finger sensor service node
@@ -45,7 +45,7 @@ def generate_launch_description():
             executable='xela_service_fingers',
             name='xela_service_fingers',
             arguments=['--ip', fingers_ip, '--port', fingers_port],
-            output='screen',
+            # output='screen',
         ),
         # Launch the palm sensor service node
         Node(
@@ -53,6 +53,6 @@ def generate_launch_description():
             executable='xela_service_palm',
             name='xela_service_palm',
             arguments=['--ip', palm_ip, '--port', palm_port],
-            output='screen',
+            # output='screen',
         ),
     ])
