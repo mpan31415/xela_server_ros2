@@ -51,6 +51,7 @@ install(PROGRAMS
   scripts/xela_service
   scripts/xela_service_fingers
   scripts/xela_service_palm
+  scripts/xela_service_fingertips
   DESTINATION lib/${PROJECT_NAME}
 )
 
